@@ -1,0 +1,4 @@
+FROM alpine
+COPY crane.py /crane.py
+RUN apk add --update python3
+CMD sh -c "python3 /crane.py; sleep 1;"

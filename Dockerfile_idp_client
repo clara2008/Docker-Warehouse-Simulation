@@ -1,0 +1,4 @@
+FROM alpine
+COPY idp_client.py /idp_client.py
+RUN apk add --update python3
+CMD sh -c "python3 /idp_client.py; sleep 1;"

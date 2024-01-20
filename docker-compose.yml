@@ -1,0 +1,30 @@
+version: '3'
+services:
+  plc1:
+    build:
+      context: .
+      dockerfile: Dockerfile_server
+    ports:
+     - "5000:5000"
+    networks:
+     - plc-network
+  plc2:
+    build:
+      context: .
+      dockerfile: Dockerfile_conveyor
+    networks:
+      - plc-network
+  plc3:
+    build:
+      context: .
+      dockerfile: Dockerfile_idp_client
+    networks:
+      - plc-network
+  plc4:
+    build:
+      context: .
+      dockerfile: Dockerfile_crane
+    networks:
+      - plc-network
+networks:
+  plc-network:

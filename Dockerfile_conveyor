@@ -1,0 +1,4 @@
+FROM alpine
+COPY conveyor.py /conveyor.py
+RUN apk add --update python3
+CMD sh -c "python3 /conveyor.py; sleep 1;"
